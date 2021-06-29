@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title> Home </title>
+       <link rel="stylesheet" href="../static/style.css">
+    </head>
+    <body bgcolor="#e6ffee">
+    <div class="one">
+            <div class="two">
+                 <h1>Side Bar</h1>
+                <ul>
+                    <li class="active"><a href="{{url_for('login_page')}}">Home</a></li>
+                    <li><a href="{{url_for('display_recruiter')}}">Display</a></li>
+                    <li><a href="{{url_for('create_job')}}">Post Job</a></li>
+                     <li><a href="{{url_for('view_job_created')}}">View Jobs Created</a></li>
+                    <li><a href="{{url_for('logout')}}">Log out</a></li>
+
+                </ul>
+            </div>
+        <div class="content" align="center">
+                <div class="topbar">
+                    <h2>Welcome!! {{ session.username }} !! </h2>
+                </div></br></br>
+            <div class="contentbar">
+                    {{ msg }}
+                </div>
+
+
+          </div>
+        </div>
+    </body>
+</html>
+
+
+

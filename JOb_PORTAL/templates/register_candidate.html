@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Register Page For Candidates</title>
+		<link rel="stylesheet" href="../static/style.css">
+			<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"> -->
+	</head>
+	<body>
+		 <div class="registercontent" align="center">
+            <div class="registertop">
+                <h1>Candidate Register</h1>
+            </div></br></br>
+             <div class="registerbottom">
+			<form action="{{ url_for('register_candidate') }}" method="post" autocomplete="off">
+				<div class="msg">{{ msg }}</div>
+				<input type="text" name="username" placeholder="Username" id="username" class="textbox" required></br><br>
+				<input type="password" name="password" placeholder="Password" id="password" class="textbox" required></br><br>
+				<input type="email" name="email" placeholder="Email" id="email" class="textbox" required></br><br>
+				<input type="radio" value= "male" name="gender" id="male" class="textbox" required>
+				<label for="male">Male</label>
+				<input type="radio" value= "female" name="gender" id="female" class="textbox" required>
+				<label for="female">Female</label>	<br><br>
+				<input type="text" name="contact_no" placeholder="Contact Number" id="contact_no" class="textbox" required></br><br>
+ 				<input type="text" name="resume_link" placeholder="Resume Link" id="resume_link" class="textbox" ></br><br>
+				<input type="submit" class="btn" value="Sign Up"></br>
+			</form>
+		<p class="worddark">Already have an account?  <a class="worddark" href="{{url_for('login_page')}}"> Sign In here</a></p>
+		</div>
+	</div>
+	</body>
+</html>

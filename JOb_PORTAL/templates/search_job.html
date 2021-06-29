@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>a<html lang="en">
+    <head>
+        <title>display</title>
+        <link rel="stylesheet" href="../static/style.css">
+    </head>
+    <body bgcolor="#e6ffee">
+        <div class="one">
+            <div class="two">
+                <h1>Side Bar</h1>
+                <ul>
+                    <li class="active"><a href="{{url_for('login_page')}}">Home</a></li>
+                    <li><a href="{{url_for('display_candidate')}}">Display</a></li>
+                    <li><a href="{{url_for('search_job')}}">Search Job</a></li>
+                    <li><a href="{{url_for('available_jobs')}}">Current Openings</a></li>
+                    <li><a href="{{url_for('logout')}}">Log out</a></li>
+                </ul>
+            </div>
+            <div class="content" align="center">
+                <div class="topbar">
+                    <h2>Current Opening!! </h2>
+                </div>  </br>
+                <div class="container">
+                    <div class="col-md-12">
+                <form action="{{ url_for('search_job') }}" method="post" autocomplete="off">
+                    <input class="col-xs-3" id="job_title" name="job_title" type="text" placeholder="Title" style="background-color:#DCDCDC; height:40px">
+                    <input class="col-xs-4 col-xs-offset-2" id="recruiter_name" name="recruiter_name" type="text" placeholder="Recruiter Name" style="background-color:#DCDCDC; height:40px">
+                    <input class="col-xs-4 col-xs-offset-2" id="description" name="description" type="text" placeholder="Description" style="background-color:#DCDCDC; height:40px">
+                    <input type="submit" class="btn" value="Search JOBs"></br>
+                </form>
+                        </div>
+                </div>
+                <form action="{{ url_for('apply') }}" method="post" autocomplete="off">
+                <table border = "1">
+                    <tr>
+                <th>Company Name</th>
+                <th>Position</th>
+                <th>Description</th>
+                <th>Salary</th>
+                <th>Contact Number</th>
+                <th>Location</th>
+                <th>Apply</th>
+            </tr>
+                    {% for elem in details %}
+
+                <tr>
+
+                    <input type="hidden" name="job_id" value={{ elem[0] }} id ="job_id"/>
+                    <td>{{ elem[6] }}</td>
+                    <td>{{ elem[4]}}</td>
+                    <td>{{elem[5]}}</td>
+                    <td>{{elem[7]}}</td>
+                    <td>{{elem[8]}}</td>
+                    <td>{{ elem[6] }}</td>
+                    <td><input type="submit" value="Apply" id="submit" class="btn"></a></td>
+
+                </tr>
+                    {% endfor %}
+
+
+        </table>
+                    </form>
+            </div>
+        </div>
+    </body>
+</html>s

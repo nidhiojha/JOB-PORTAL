@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>a<html lang="en">
+    <head>
+        <title>display</title>
+        <link rel="stylesheet" href="../static/style.css">
+    </head>
+    <body bgcolor="#e6ffee">
+        <div class="one">
+            <div class="two">
+                <h1>Side Bar</h1>
+                <ul>
+                    <li class="active"><a href="{{url_for('login_page')}}">Home</a></li>
+                    <li><a href="{{url_for('display_recruiter')}}">Display</a></li>
+                    <li><a href="{{url_for('create_job')}}">Post Job</a></li>
+                    <li><a href="{{url_for('view_job_created')}}">View Jobs Created</a></li>
+                    <li><a href="{{url_for('logout')}}">Log out</a></li>
+                </ul>
+            </div>
+            <div class="content" align="center">
+                <div class="topbar">
+                    <h2>Current Opening!! </h2>
+                </div>  </br>
+                <table border = "1">
+            <tr>
+                <th>Position</th>
+                <th>Description</th>
+                <th>View Applicants</th>
+                <th>Delete Job Option</th>
+            </tr>
+                    {% for elem in details %}
+                <tr>
+                     <td>{{ elem[4]}}</td>
+                    <td>{{elem[5]}}</td>
+
+                    <form action="{{ url_for('view_applicants') }}" method="post" autocomplete="off">
+                    <input type="hidden" name="job_id" value={{ elem[0] }} id ="job_id"/>
+                    <td><input type="submit" value="view applicants" id="submit" class="btn"></a></td>
+                    </form>
+                    <form action="{{ url_for('delete_job') }}" method="post" autocomplete="off">
+                    <input type="hidden" name="job_id" value={{ elem[0] }} id ="job_id2"/>
+                    <td><input type="submit" value="Delete Job" id="submit2" class="btn"></a></td>
+                    </form>
+                </tr>
+                    {% endfor %}
+
+
+        </table>
+
+            </div>
+        </div>
+    </body>
+</html>s

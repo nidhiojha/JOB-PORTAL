@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Login</title>
+		<link rel="stylesheet" href="../static/style.css">
+	</head>
+	<body> </br></br></br></br></br>
+		<div class="logincontent" align="center">
+            <div class="logintop">
+                <h1>Login</h1>
+			</div></br></br></br></br>
+			<div class="loginbottom">
+          			<form action="{{ url_for('login') }}" method="post">
+				 <div class="msg">{{ msg }}</div>
+				<input id="username" name="username" type="text" placeholder="Username" class="textbox"/></br></br>
+				<input id="password" name="password" type="password" placeholder="Password" class="textbox"/></br></br></br>
+				<input type="radio" value= "recruiter" name="isrecruiter" id="recruiter" required>
+				<label for="recruiter">recruiter</label> 
+				<input type="radio" value= "candidate" name="isrecruiter" id="candidate" required>
+				<label for="candidate">candidate</label>    <br>  <br><br>
+                <input type="submit" class="btn" value="LogIn">
+	
+			</form><br><br>
+
+		<p class="worddark">Dont't have an account? Register..<br> <br><a class="worddark" href="{{url_for('register_recruiter')}}"> For Recruiter </a></p>
+		<a class="worddark" href="{{url_for('register_candidate')}}"> For Candidate </a></p>
+		</div>
+	</div>
+		
+	</body>
+</html>
