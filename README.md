@@ -1,7 +1,7 @@
 # Online Job Portal
 
 ## Description : <br />
-<t>The objective of this project is to create and Online Job Portal where recruiter can create new job and can see all applicants who have applied the job where as candidates can see current openings jobs and can apply to tha job. <br />
+&ensp The objective of this project is to create and Online Job Portal where recruiter can create new job and can see all applicants who have applied the job where as candidates can see current openings jobs and can apply to tha job. <br />
 
 ##  API Server <br />
 *python [main.py](https://github.com/nidhiojha/eCommerce_CLI/blob/cli_application/my_cart.py)* <br />
